@@ -1,29 +1,25 @@
-/* Description */
+/* Description
+  Build Tower
+
+Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+
+*/
 
 /* Solution */
 function towerBuilder(nFloors) {
   let tower = []
   let floor = ""
-  let left = 0
-  let right = 0
   let pad = 0
-  console.log('nFloors:', nFloors)
   for (let i = nFloors; i > 0; i--) {
-    console.log("i:", i)
-    for (let j = 0; j < (nFloors * 2) - 1; j++) {
-      console.log("j", j)
-      console.log("pad:", pad)
+    for (let j = 1; j < (nFloors * 2); j++) {
       if (i === nFloors) {
         floor += "*"
-      } else if (j < pad || j >= (nFloors * 2) - pad*2) {
+      } else if (j <= pad || j >= (nFloors * 2) - pad) {
         floor += " "
       }
       else {
         floor += "*"
       }
-
-      console.log("floor", floor)
-
     }
     
     tower.unshift(floor)
@@ -31,6 +27,6 @@ function towerBuilder(nFloors) {
     pad++
   }
   
-  console.log("tower", tower)
   return tower
+  
 }
