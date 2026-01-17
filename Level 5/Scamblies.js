@@ -1,49 +1,38 @@
 /* Description &/
+  Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
 
+  Notes:
+
+  Only lower case letters will be used (a-z). No punctuation or digits will be included.
+  Performance needs to be considered.
 /* Solution */
 
 function scramble(str1, str2) {
-  //console.log("str1", str1)
-  //console.log("str2", str2)
+
   let str1Arr = str1.split("")
+  let str2Arr = str2.split("")
   let str1CharCount = {}
+  let str2CharCount = {}
   for (let char of str1Arr) {
     str1CharCount[char] = (str1CharCount[char] || 0) + 1
   }
   
-  console.log(str1CharCount)
-  
-  /*
-  
-      for (let word of filteredList) { 
-      wordCount[word] = (wordCount[word] || 0) + 1
-    }
-       if (charSeen[char]) {
-        charSeen[char]++
-      } else {
-        charSeen[char] = 1;
-      }
-    })
-  */
+  for (let char of str2Arr) {
+    str2CharCount[char] = (str2CharCount[char] || 0) + 1
+  }
   
   let contains = false
-  for (let i = 0; i < str2.length; i++) {
-    //console.log(str2[i])
-    //let re = new RegExp(String.raw`${str2[i]}`, "g")
-    if (!str1.match(str2[i])) {
+  
+  for (let key of Object.keys(str2CharCount)) {
+    if (!str1CharCount[key]) {
       return false
     }
-    let str1Count = str1.split(str2[i]).length
-    let str2Count = str2.split(str2[i]).length
-    //console.log(str1Count)
-    //console.log(str2Count)
-    //console.log(re)
-    if ( str1Count >= str2Count ) {
-      //console.log(`str1: ${(str1.match(re) || []).length} str2: ${(str2.match(re) || []).length}`)
+    if (str1CharCount[key] >= str2CharCount[key]) {
       contains = true
     } else {
       return false
-    } 
+    }
   }
-  return contains;
+  
+  return contains
 }
