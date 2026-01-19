@@ -9,6 +9,7 @@ class PaginationHelper {
 	}
 	itemCount() {
 	// returns the number of items within the entire collection
+  return collection.length
 	}
 	pageCount() {
 	// returns the number of pages
