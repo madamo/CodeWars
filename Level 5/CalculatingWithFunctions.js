@@ -23,8 +23,9 @@ function five() {
 function six() {
   return 6
 }
-function seven(operation) {
-  return 7
+function seven(x=7) {
+  console.log('seven')
+  return 7*x
 }
 function eight() {
   return 8
@@ -38,6 +39,7 @@ function plus(x, y) {
 }
 function minus() {}
 function times(x, y) {
-  return x * y
+  console.log(x)
+  return x
 }
 function dividedBy() {}
