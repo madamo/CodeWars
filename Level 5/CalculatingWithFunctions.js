@@ -25,7 +25,7 @@ function six() {
 }
 function seven(x=7) {
   console.log('seven')
-  return 7*x
+  return 7
 }
 function eight() {
   return 8
