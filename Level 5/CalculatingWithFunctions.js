@@ -17,15 +17,15 @@ function three() {
 function four() {
   return 4
 }
-function five() {
-  return 5
+function five(x=5) {
+  return x
 }
 function six() {
   return 6
 }
 function seven(x=7) {
-  console.log('seven')
-  return 7
+  console.log('x=', x)
+  return x
 }
 function eight() {
   return 8
@@ -38,7 +38,7 @@ function plus(x, y) {
   return x + y
 }
 function minus() {}
-function times(x, y) {
+function times(x) {
   console.log(x)
   return x
 }
