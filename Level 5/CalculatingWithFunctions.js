@@ -1,49 +1,62 @@
-/* Description */
+/* Description 
+  This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+  seven(times(five()));   //  must return 35
+  four(plus(nine()));     //  must return 13
+  eight(minus(three()));  //  must return 5
+  six(dividedBy(two()));  //  must return 3
+  Requirements:
+
+  There must be a function for each number from 0 ("zero") to 9 ("nine")
+  There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy
+  Each calculation consist of exactly one operation and two numbers
+  The most outer function represents the left operand, the most inner function represents the right operand
+  Division should be integer division. For example, this should return 2, not 2.666666...:
+
+*/
 
 /* Solution */
 
-function zero() {
-  return 0
+function zero(x = () => 0) {
+  return x(0)
 }
-function one() {
-  return 1
+function one(x = () => 1) {
+  return x(1)
 }
-function two() {
-  return 2
+function two(x = () => 2) {
+  return x(2)
 }
-function three() {
-  return 3
+function three(x = () => 3) {
+  return x(3)
 }
-function four() {
-  return 4
+function four(x = () => 4) {
+  return x(4)
 }
-function five(x=5) {
-  console.log('five param=', x)
-  return x
+function five(x = () => 5) {
+  return x(5)
 }
-function six() {
-  return 6
+function six(x = () => 6) {
+  return x(6)
 }
-function seven(x) {
-  console.log('seven param=', x)
+function seven(x = () => 7) {
   return x(7)
 }
-function eight() {
-  return 8
+function eight(x = () => 8) {
+  return x(8)
 }
-function nine() {
-  return 9
+function nine(x = () => 9) {
+  return x(9)
 }
 
-function plus(x, y) {
-  return x + y
+function plus(x) {
+  return (y) => x + y
 }
-function minus() {}
+function minus(x) {
+  return (y) => y - x
+}
 function times(x) {
-  console.log('times param:', x)
-  return (y) => { 
-      console.log('x', x)
-      return x * y
-    }
+  return (y) => x * y
 }
-function dividedBy() {}
+function dividedBy(x) {
+  return (y) => Math.floor(y / x)
+}
