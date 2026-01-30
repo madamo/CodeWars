@@ -3,11 +3,15 @@
 /* Solution */
 
 function nextBigger(n){
-  //your code here
   console.log(n.toString())
   const numString = n.toString()
-  console.log(numString.length)
-  if (numString[numString.length - 2] < numString[numString.length-1]) {
+  const digitArr = numString.slice(-(numString.length)).split("")
+  let biggerStr = ""
+  
+  if (digitArr[0] < digitArr[1]) {
     console.log('bigger')
+    biggerStr += digitArr[1] + digitArr[0]
   }
+  
+  return parseInt(biggerStr)
 }
