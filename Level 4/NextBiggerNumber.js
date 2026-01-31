@@ -8,6 +8,7 @@ function nextBigger(n){
   const digitArr = numString.slice(-(numString.length)).split("")
   let biggerStr = ""
   
+  //TO-DO: loop through entire array
   if (digitArr[0] < digitArr[1]) {
     console.log('bigger')
     biggerStr += digitArr[1] + digitArr[0]
