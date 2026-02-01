@@ -2,6 +2,9 @@
 
 /* Solution */
 
+// if value of 1s is greater than value of 10s, swap digits
+// else if equal or less than, check if 10s is greater than 100s and so on
+
 function nextBigger(n){
   console.log(n.toString())
   const numString = n.toString()
