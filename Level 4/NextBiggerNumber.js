@@ -11,11 +11,13 @@ function nextBigger(n){
   const digitArr = numString.slice(-(numString.length)).split("")
   let biggerStr = ""
   
-  //TO-DO: loop through entire array
-  if (digitArr[0] < digitArr[1]) {
-    console.log('bigger')
-    biggerStr += digitArr[1] + digitArr[0]
+  for (let i = 0; i < digitArr.length; i++) {
+    if (digitArr[i] < digitArr[i+1]) {
+      console.log('bigger')
+      biggerStr += digitArr[i+1] + digitArr[i]
+    }
   }
+
   
   return parseInt(biggerStr)
 }
